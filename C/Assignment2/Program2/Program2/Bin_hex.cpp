@@ -7,7 +7,7 @@ void convertBinaryToHexadecimal()
 	char hexdecnum[100];
 	printf("Enter decimal number : ");
 	scanf("%ld", &decnum);
-	quot = decnum;
+	quot = decnum;//hi
 	while (quot != 0)
 	{
 		temp = quot % 16;
