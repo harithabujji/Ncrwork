@@ -9,7 +9,7 @@ void reverse_num(int n)
 		reverse = reverse * 10 + rem;
 		n /= 10;
 	}
-	printf("reverse of %d is = %ld\n", temp,reverse);
+	printf("reverse of %d is = %ld \n", temp,reverse);
 }
 
 int main()
