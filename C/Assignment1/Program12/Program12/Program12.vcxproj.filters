@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="interest.cpp">
+    <ClCompile Include="rotate_right_int.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

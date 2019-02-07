@@ -50,5 +50,6 @@ int main()
 	fflush(stdin);
 	fflush(stdout);
 	getchar();
+	getchar();
 	return 0;
 }

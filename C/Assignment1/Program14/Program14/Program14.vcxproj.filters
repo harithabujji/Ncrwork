@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="interest.cpp">
+    <ClCompile Include="itob_itoh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

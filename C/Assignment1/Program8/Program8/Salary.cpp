@@ -25,5 +25,6 @@ int main()
 		hra = 30;
 	}
 	gross_salary = basic_salary + ((basic_salary*da) / 100) + ((basic_salary*hra) / 100);
-	printf("\n Gross salary for %d is : %d",)
+	printf("\n Gross salary for %d is : %d", basic_salary, gross_salary);
+	getchar();
 }
