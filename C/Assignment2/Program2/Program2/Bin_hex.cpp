@@ -2,40 +2,28 @@
 #include<conio.h>
 void convertBinaryToHexadecimal()
 {
-	long int decnum, rem, quot;
-	int i = 1, j, temp;
-	char hexdecnum[100];
-	printf("Enter decimal number : ");
-	scanf("%ld", &decnum);
-	quot = decnum;//hi
-	while (quot != 0)
+	
+	long int binaryval, hexadecimalval = 0, i = 1, rem;
+
+	printf("Enter the binary number: ");
+	scanf_s("%ld", &binaryval);
+	while (binaryval != 0)
 	{
-		temp = quot % 16;
-		if (temp < 10)
-		{
-			temp = temp + 48;
-		}
-		else
-		{
-			temp = temp + 55;
-		}
-		hexdecnum[i++] = temp;
-		quot = quot / 16;
+		rem = binaryval % 10;
+		hexadecimalval = hexadecimalval + rem * i;
+		i = i * 2;
+		binaryval = binaryval / 10;
 	}
-	printf("hexadecimal value of %d is :\n", decnum);
-	for (j = i - 1; j>0; j--)
-	{
-		printf("%c", hexdecnum[j]);
-	}
+	printf(" hexadecimal value is: %lX", hexadecimalval);
 }
 void convertHexaDecimalToBinary()
 {
 
-	char binarynum[MAX], hexa[MAX];
+	char binarynum[100], hexa[100];
 	long int i = 0;
 
 	printf("Enter the value for hexadecimal ");
-	scanf_s("%s", hexa);
+	scanf_s("%s", hexa,100);
 	printf("\n binary value of %s : ");
 	while (hexa[i])
 	{
@@ -86,8 +74,7 @@ void convertHexaDecimalToBinary()
 		case 'f':
 			printf("1111"); break;
 		default:
-			printf("\n Invalid hexa digit %c ", hexa[i]);
-			return 0;
+			printf("\n Invalid hexa digit %c ");
 		}
 		i++;
 	}
@@ -109,7 +96,7 @@ int main()
 			convertBinaryToHexadecimal();
 			break;
 		case 2:
-			convertHexaDecimalToBinary());
+			convertHexaDecimalToBinary();
 			break;
 		default:
 			printf("\n Enter the correct option");
