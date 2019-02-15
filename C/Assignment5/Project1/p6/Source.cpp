@@ -8,7 +8,6 @@ class matrix
 	int row;
 	int col;
 
-
 public:
 	matrix()
 	{
