@@ -34,10 +34,11 @@ istream & operator>>(istream &in, Student &s)
 ostream & operator<<(ostream &out, Student &s)
 {
 	//out << "student name is : "<<s.name<<endl;
-	out << "Roll number is : " << s.rno << endl;
-	out << "Marks are : " << s.m1 << " " << s.m2 << " " << s.m3 << endl;
+	
+	/*out << "Marks are : " << s.m1 << " " << s.m2 << " " << s.m3 << endl;
 	out << "Total Marks are : " << s.total_marks << endl;
-	out << "Grade is : " << s.grade << endl;
+	out << "Grade is : " << s.grade << endl;*/
+	out << s.rno << "\t \t" << s.name << " \t \t " << s.m1 << "\t \t" << s.m2 << "\t \t" << s.m3 << "\t \t" << s.total_marks << "\t \t" << s.grade << endl;
 	return out;
 }
 void generate_results(Student *s, int n)
@@ -62,7 +63,7 @@ void generate_results(Student *s, int n)
 
 		else
 		{
-			cout << "FAIL";
+			//cout << "FAIL";
 			s[i].grade = 'F';
 		}
 	}
@@ -72,12 +73,14 @@ int main()
 	int n,i;
 	cout << "\n Enter number of students : ";
 	cin >> n;
-	Student *s = (Student *)malloc(sizeof(Student)*n);
+	Student *s=new Student[n];
+	// *s = (Student *)malloc(sizeof(Student)*n);
 	for (i = 0; i < n; i++)
 	{
 		cin >> s[i];
 	}
 	generate_results(s, n);
+	cout << "Roll number \t Name \t \t Marks1 \t Marks2 \t Marks3 \t Total Marks \t Grade" << endl;
 	for (i = 0; i < n; i++)
 	{
 		cout << s[i];
