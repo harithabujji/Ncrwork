@@ -7,7 +7,6 @@ int main()
 	printf("sum is defined ");
 	#endif 
 		return 0;
-
 	getchar();
 	getchar();
 	return 0;

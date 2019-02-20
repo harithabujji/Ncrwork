@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Struct_time.cpp">
+    <ClCompile Include="State_capital.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8200387E-32A3-4ABA-8299-4D0643F7D762}</ProjectGuid>
-    <RootNamespace>program1</RootNamespace>
+    <ProjectGuid>{26562EB8-FB39-4B05-8579-ECB602E4BD2A}</ProjectGuid>
+    <RootNamespace>Program10</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -110,7 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Struct_time.cpp" />
+    <ClCompile Include="State_capital.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

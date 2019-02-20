@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8200387E-32A3-4ABA-8299-4D0643F7D762}</ProjectGuid>
-    <RootNamespace>program1</RootNamespace>
+    <ProjectGuid>{4356015F-6265-4AF3-9C12-E6CC93F81493}</ProjectGuid>
+    <RootNamespace>Program5</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -110,7 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Struct_time.cpp" />
+    <ClCompile Include="Dates_diff.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
