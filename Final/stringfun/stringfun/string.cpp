@@ -1,85 +1,113 @@
-#include<iostream>
-using namespace std;
-#define MAX 100
-
-
-int getlength(char* str) 
+#include<string.h>
+#include<stdio.h>
+#include<stdlib.h>
+//String reverse program
+void str_reverse(char *input, char *output)
 {
-	int n;
-	for (n = 0; str[n] != '\0'; n++);
-	return n;
-}
-
-void reverseStr(char* str, int n)  //function to reverse a string
-{
-	char temp;
-	for (int i = 0; i < n / 2; i++)
+	int length = strlen(input);
+	int i = 0, j = 0;
+	for (i = (length - 1); i >= 0; i--)
 	{
-		temp = str[i];
-		str[i] = str[n - i - 1];
-		str[n - i - 1] = temp;
-
+		*(output + j) = *(input + i);
+		j++;
 	}
+	*(output + j) = '\0';
 }
-
-char* strcat(char* str1, char* str2)
+//String copy 
+void str_copy(char *input, char *output)
 {
 	int i = 0, j = 0;
-	int n1, n2;
-	n1 = getlength(str1);
-	n2 = getlength(str2);
-	char* str = NULL;
-	str = (char*)malloc((n1 + n2) * sizeof(char));
-	for (i = 0; str1[i] != '\0'; i++)
-		str[i] = str1[i];
-	while (str2[j] != '\0')
+	while (*(input + i) != '\0')
 	{
-		str[i++] = str2[j++];
-
+		*(output + j) = *(input + i);
+		i++;
+		j++;
 	}
-	return str;
-
+	*(output + j) = '\0';
 }
-bool strcmp(char* st1, char* st2)
+//String concatenation
+void str_cat(char *input1, char *input2)
 {
-	if (getlength(st1) != getlength(st2))
-		return false;
+	int length = strlen(input2);
+	int l = strlen(input1);
+	int i = 0;
+	input1 = (char*)realloc(input1, 40);
+	while (*(input2 + i) != '\0')
+	{
+		*(input1 + l) = *(input2 + i);
+		l++;
+		i++;
+	}
+	*(input1 + l) = '\0';
+}
+//string compares
+void str_compare(char *input1, char *input2)
+{
+	int l1 = strlen(input1);
+	int l2 = strlen(input2);
+	int i = 0;
+	if (l1 > l2)
+		printf("NOT EQUAL");
+	else if (l1 < l2)
+		printf("NOT EQUAL");
 	else
 	{
-		int i = 0;
-		while (st1[i] != '\0')
+		while (*(input1 + i) != '\0')
 		{
-			if (st1[i] != st2[i])
-				return false;
-			i++;
+			if (*(input1 + i) == *(input2 + i))
+				i++;
+			else
+			{
+				printf("NOT EQUAL");
+				return;
+			}
 		}
-		return true;
-
+		printf("%s and %s :EQUAL", input1, input2);
+	}
+}
+int main()
+{
+	char *string1 = (char*)malloc(40);
+	char *string2 = (char*)malloc(40);
+	int choice = 0;
+	while (1)
+	{
+		printf("\nEnter \n 0:EXIT \n 1.Reverse \n 2.Copy \n 3.Concatnate \n 4.Comparison : \n");
+		scanf_s("%d", &choice);
+		switch (choice)
+		{
+		case 1:printf("Enter string to be reversed :\n");
+			scanf_s("%9s", string1, 40);
+			str_reverse(string1, string2);
+			printf("Reversed string :%s ", string2);
+			break;
+		case 2:printf("Enter string to be copied :\n");
+			scanf_s("%9s", string1, 40);
+			str_copy(string1, string2);
+			printf("\n Copied string :%s", string2);
+			break;
+		case 3:printf("Enter first string :\n");
+			scanf_s("%9s", string1, 40);
+			printf("Enter second string :\n");
+			scanf_s("%9s", string2, 40);
+			str_cat(string1, string2);
+			printf("\n Concatnated string :%s", string1);
+			break;
+		case 4:printf("Enter first string :\n");
+			scanf_s("%9s", string1, 40);
+			printf("Enter second string :\n");
+			scanf_s("%9s", string2, 40);
+			str_compare(string1, string2);
+			break;
+		case 0:
+			free(string1);
+			free(string2);
+			getchar();
+			return 0;
+		default:
+			printf("\nINVALID CHOICE \n");
+		}
 	}
 
-}
-
-int main()		//main program
-{
-	char* str = NULL;
-	char* cstr = NULL;
-	char* str1 = NULL;
-	int n;
-	str = (char*)malloc(sizeof(char)*MAX);  //dynamic allocation
-	cin >> str;
-	n = getlength(str);
-	cstr = (char*)malloc((n + 1) * sizeof(char));
-	for (int i = 0; i <= n; i++)
-		cstr[i] = str[i];
-	cout << "copied str:" << cstr << endl;
-	reverseStr(str, n);   //function call for reversing a string
-	cout << "reversed string:";
-	cout << str << endl;
-
-	str1 = strcat(str, cstr);
-	cout << "after cuncation: ";
-	cout << str1 << endl;
-	cout << strcmp(str, cstr);
-	system("pause");
 	return 0;
 }
